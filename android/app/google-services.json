@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "9937259539",
+    "firebase_url": "https://riduk-1214.firebaseio.com",
+    "project_id": "riduk-1214",
+    "storage_bucket": "riduk-1214.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9937259539:android:c871df2aa5b9c563",
+        "android_client_info": {
+          "package_name": "com.riduk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9937259539-88eh07kk7i5rtindk9q1sgiv3vmasjt1.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "9937259539-k1o0qjursd2sefbqan60ffq8anqt0dqs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvoizrrk87pvn5JLokF84oLVJv2iFgan4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
