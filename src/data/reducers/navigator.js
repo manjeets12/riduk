@@ -21,16 +21,11 @@ const initialState = {
   ],
 };
 
-function nav(state = initialState, action){
+/*function nav(state = initialState, action){
   let {data, type} = action;
   return AppNavigator.router.getStateForAction(action, state) || state;
-  /*switch(type){
-    case AUTHENTICATED:
-    return AppNavigator.router.getStateForAction(NavigationActions.navigate({ routeName: 'UserProfile' }));
-    case LOGGED_OUT:
-    return AppNavigator.router.getStateForAction(NavigationActions.navigate({ routeName: 'Login' }));
-    default:
-    return AppNavigator.router.getStateForAction(action, state) || state;
-  }*/
+}*/
+function nav(state, action){
+  return AppNavigator.router.getStateForAction(action, state) || state;
 }
 export default nav;

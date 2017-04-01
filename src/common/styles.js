@@ -4,6 +4,7 @@ import {StyleSheet, Dimensions} from 'react-native';
 const { width, height } = Dimensions.get('window');
 
 const styles=StyleSheet.create({
+
 	container: {
 		flex: 1,
 	},
@@ -183,6 +184,26 @@ const styles=StyleSheet.create({
         marginTop:10, 
         justifyContent:'center', 
         alignItems:'center'
+    },
+    userAvatar: {
+        height: 110,
+        borderRadius: 55,
+        width: 110,
+        borderWidth: 3,
+        borderColor: '#ffffff',
+        marginTop: 30,
+    },
+    fullWidth:{
+        width:width-40,
+    },
+    customRow:{
+        flexDirection:'row', 
+        alignItems:'center', 
+        justifyContent:'center', 
+        borderBottomWidth:1, 
+        borderBottomColor:'#e0e0e0', 
+        paddingTop:10, 
+        paddingBottom:10
     }
 });
 

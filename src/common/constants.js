@@ -12,6 +12,11 @@ export const MORE_ICON = require('src/Images/more.png');
 export const STAR_ICON = require('src/Images/star.png');
 export const USER_ICON = require('src/Images/user.png');
 export const SHARE_ICON = require('src/Images/share.png');
+export const AVATAR = require('src/Images/avatar.jpg');
+export const BACKGROUND_IMG = require('src/Images/background.jpg');
+export const CAMERA_ICON_BLACK = require('src/Images/camera_black.png');
+
+
 
 //Actions types
 export const REGISTER_USER = 'REGISTER_USER';
@@ -24,6 +29,12 @@ export const SHOW_LOADING_OVERLAY ='SHOW_LOADING_OVERLAY';
 export const HIDE_LOADING_OVERLAY ='HIDE_LOADING_OVERLAY';
 export const LOGGED_OUT ='LOGGED_OUT';
 export const LOGGED_OUT_FAILED ='LOGGED_OUT_FAILED';
+
+//for image processor using clarifai api;
+export const FETCHING = 'FETCHING';
+export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+export const FETCH_ERROR = 'FETCH_ERROR';
+export const FETCH_FROM_URL_SUCCESS ='FETCH_FROM_URL_SUCCESS';
 
 
 

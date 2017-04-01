@@ -1,7 +1,7 @@
 'use strict';
 
 import React, {Component} from 'react';
-import { View, BackAndroid, StatusBar,} from 'react-native';
+import { View, BackAndroid, StatusBar,Dimensions} from 'react-native';
 import {
   NavigationActions,
   addNavigationHelpers,
@@ -10,6 +10,7 @@ import {
 } from 'react-navigation';
 import { connect} from 'react-redux';
 
+const { width, height } = Dimensions.get('window');
 var api=require('src/common/api');                 //for setting navigator
 import styles from 'src/common/styles';
 //import Drawer from 'react-native-drawer';
@@ -23,25 +24,37 @@ import ForgotPassword from 'src/screens/forgotPassword'
 //after login scenes
 import Dashboard from 'src/screens/dashboard'
 import UserProfile from 'src/screens/userProfile'
-import Drawer from 'src/screens/drawer'
-
+import DrawerContent from 'src/screens/drawer'
 
 
 const routesConfig = {
-  //Splash:{screen:SplashScreen},
   Landing:{screen:LandingScreen},
   Login: { screen: Login },
   SignUp: { screen: SignUp },
   ForgotPassword: { screen: ForgotPassword },
   Dashboard:{screen:Dashboard},
   UserProfile:{screen:UserProfile},
-  Drawer:{screen:Drawer}
 };
-
-//export const AppNavigator = DrawerNavigator(routesConfig);
-export const AppNavigator = StackNavigator(routesConfig);
-
+const mainDrawerRoutes ={
+    Dashboard:{screen:AppNavStack},
+    UserProfile:{screen:UserProfile},
+}
 export const AppBeforeLogin = StackNavigator(routesConfig);
+
+export const AppNavStack = StackNavigator(routesConfig,{initialRouteName:'Dashboard'});
+
+export const AppNavigator = DrawerNavigator({
+    Dashboard:{screen:AppNavStack},
+    UserProfile:{screen:UserProfile},
+}, {
+  drawerWidth: 0.8*width,
+  contentComponent:({navigation})=> <DrawerContent navigation={navigation} routes={mainDrawerRoutes} />,
+});
+
+
+
+//export const AppNavigator = StackNavigator(routesConfig);
+
 
 export const UnAuthorizedApp =()=>{
   return(
@@ -101,11 +114,11 @@ class AppWithNavigationState extends Component{
   }
 };
 
-const mapStateToProps = (state) => {
+/*const mapStateToProps = (state) => {
    return {
        nav: state.nav,
        authenticated:state.user.authenticated
    };
-};
+};*/
 export default connect(state =>({nav: state.nav}))(AppWithNavigationState);
 //module.exports = AppWithNavigationState;

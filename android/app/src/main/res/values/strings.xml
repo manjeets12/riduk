@@ -1,5 +1,5 @@
 <resources>
-
-
     <string name="app_name">Riduk</string>
+    <string name="fb_app_id">1673118676324301</string>
+    <string name="fb_login_protocol_scheme">fb1673118676324301</string>
 </resources>

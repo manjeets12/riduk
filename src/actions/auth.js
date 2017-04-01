@@ -1,6 +1,7 @@
 'use strict';
 
 import firebase from 'src/common/firebase';
+import {FBLoginManager} from 'react-native-facebook-login';
 
 //import api from 'src/common/api';
 import { NavigationActions} from 'react-navigation';
@@ -100,6 +101,55 @@ export const login= function(data){
     });
   }
 }
+
+export const loginWithFacebook = function(){
+  return dispatch =>{
+    FBLoginManager.loginWithPermissions(["email","user_friends"], function(error, data){
+      if (!error) {
+        console.log(data);
+        let {userId, token} = data.credentials;
+        let credentials ={
+          provider:"facebook", 
+          token:token, 
+          secret:userId
+        };
+        dispatch(loginWithCredentials(Object.assign({},credentials)));
+      } else {
+        console.log("Error: ", error);
+      }
+    });
+  }
+}
+
+export const loginWithGoogle = function(){
+  return dispatch =>{
+    FBLoginManager.logout((err, data) => {
+         const result = err || data;
+          if(result.type === 'success' && result.profile){
+           console.log(result);
+          }else{
+            console.log(err);
+          }
+     });
+  }
+}
+
+
+export const loginWithCredentials =function(credential){
+  return dispatch =>{
+    dispatch(authenticating());
+    firebase.auth().signInWithCredential(credential)
+    .then((user) => {
+      console.log('user created', user);
+      dispatch(authSuccess(user._user));
+    })
+    .catch((error) => {
+      console.log('An error occurred', error);
+      dispatch(authError(error));
+    });
+  }
+}
+
 
 export const logoutSuccess= function(){
    return{

@@ -7,6 +7,7 @@ import {connect } from 'react-redux';
 import Chats from './tabs/ChatsTab';
 import Feeds from './tabs/FeedsTab';
 import Maps from './tabs/MapsTab';
+import Tasks from './tabs/TaskTab';
 import styles from 'src/common/styles';
 
 import {DEFAULT_AVATAR,MORE_ICON} from 'src/common/constants';
@@ -24,6 +25,7 @@ const renderRight=(state) =>{
 }
 
 const DashboardTabs = TabNavigator({
+  Tasks:{screen:Tasks},
   Feeds: { screen: Feeds },
   Maps:{screen:Maps},
   Chats: { screen: Chats },
@@ -41,10 +43,13 @@ const DashboardTabs = TabNavigator({
     indicatorStyle :{
       backgroundColor:'#FFFF00',
       height:3,
+    },
+    headerMode: 'screen',
+    navigationOptions: {
+        title: 'Dashboard'
     }
   }
 });
-
 //export default Dashboard;
 
 //
@@ -76,7 +81,7 @@ class Dashboard extends Component{
 Dashboard.navigationOptions = {
     title: 'Dashboard',
     header:({ state}) => ({
-      right: renderRight(state),
+      //right: renderRight(state),
       style: {backgroundColor:'#E91E63', elevation:0},
       tintColor: '#FFF',
       titleStyle: {

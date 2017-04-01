@@ -14,6 +14,7 @@ import {startUpload} from 'src/actions/uploads'
 import api from 'src/common/api';
 import styles from 'src/common/styles';
 import Header from '../Header';
+import {UserAvatar} from 'src/common/components/UserAvatar';
 import {CALL_ICON, HEART_ICON, HEART_ICON_RED, ENVELOPE_ICON,DEFAULT_AVATAR,MORE_ICON} from 'src/common/constants';
 
 const buttons = ['Cancel', 'Change Password', 'Sign Out'];
@@ -51,7 +52,6 @@ class UserProfile extends Component{
         this.ActionSheet.show();
     }
     _handlePress(index) {
-    	
         switch(index){
           case 1:this.props.openDrawer();
           break;
@@ -68,14 +68,14 @@ class UserProfile extends Component{
 
     handleImagePicker(index){
       //this.props.openDrawer();
-    	let {uid} = this.props.user;
-    	let url = 'Images/Avatar/'+uid;
-      this.props.logout();
+    	//let {uid} = this.props.user;
+    	//let url = 'Images/Avatar/'+uid;
+      //this.props.logout();
     	/* ImagePicker.openPicker(imageOptions).then(image => {
     	 	this.props.startUpload({url:url,path:image.path});
             console.log(image);
           }); */
-       /*switch(index){
+       switch(index){
           case 1:
            ImagePicker.openCamera(imageOptions).then(image => {
             console.log(image);
@@ -92,7 +92,7 @@ class UserProfile extends Component{
           break;
           default:
           break;
-        }*/
+        }
     }
 
 	renderLoader(){
@@ -112,13 +112,10 @@ class UserProfile extends Component{
 			<View style={[styles.container,{alignItems:'center', backgroundColor:'#f2eae7'}]}>
 				<ScrollView keyboardShouldPersistTaps="always">
 					<TouchableOpacity style={{justifyContent:'center', alignItems:'center', marginTop:50}}
-					onPress={this.handleImagePicker.bind(this)}>
-						<Image
-					        style={styles.logoSmall}
-					        source={DEFAULT_AVATAR}
-					      />
-					     <Text style={[styles.normalText,{textAlign:'center', margin:10}]}>{displayName}</Text>
-               			 <Text style={[styles.normalText,{textAlign:'center', margin:10}]}>{email}</Text>
+					onPress={this.openImageOptions.bind(this)}>
+						  <UserAvatar photoURL={photoURL}/>
+					    <Text style={[styles.normalText,{textAlign:'center', margin:10}]}>{displayName}</Text>
+              <Text style={[styles.normalText,{textAlign:'center', margin:10}]}>{email}</Text>
 					</TouchableOpacity>
 					
 					

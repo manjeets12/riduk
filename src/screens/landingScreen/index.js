@@ -17,15 +17,7 @@ class LandingScreen extends Component{
 		super(props);
 	}
 	
-	renderLoader(){
-		return(
-			<ActivityIndicator
-		        animating={true}
-		        style={[styles.centering, {height: 80}]}
-		        size="large"
-		     />
-		);
-	}
+	
 
 	render(){
 		 const { navigate, dispatch } = this.props.navigation;

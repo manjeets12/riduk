@@ -14,6 +14,7 @@ import {
 const initialState = {
   authenticating:false,
   authenticated: false,
+  showLoader:false,
   error:"",
   providerId: "",
   uid:"",
@@ -28,14 +29,13 @@ function user(state = initialState, action){
   let data = action.data;
   switch(action.type){
     case AUTHENTICATING:
-    return {...state, authenticating:true}
+    return {...initialState, authenticating:true,showLoader:true}
     case AUTH_SUCCESS:
-    return {...data, authenticated:true, authenticating:false};
+    return {...data, authenticated:true, authenticating:false,showLoader:false};
     case AUTH_ERROR:
-    return {...state, error:data, authenticating:false};
+    return {...initialState, error:data};
     case LOGGED_OUT:
     case LOGGED_OUT_FAILED:
-         //state = initialState;
     return initialState;
     default:
     return state;
