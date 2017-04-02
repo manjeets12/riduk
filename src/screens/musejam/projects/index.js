@@ -47,13 +47,14 @@ class Projects extends Component{
     }
     this.renderProjects = this.renderProjects.bind(this);
     this.renderRow = this.renderRow.bind(this);
-    this.openProjectDetails = this.openProjectDetails(this);
+    this.openProjectDetails = this.openProjectDetails.bind(this);
     this.show = this.show.bind(this);
     this.handleFilter = this.handleFilter.bind(this);
     this.handleSorting = this.handleSorting.bind(this);
     this.sortByTime = this.sortByTime.bind(this);
     this.sortAlphabatically = this.sortAlphabatically.bind(this);
     this.filterByBackers = this.filterByBackers.bind(this);
+    this.serachProject = this.serachProject.bind(this);
   }
 
   componentDidMount(){
@@ -83,8 +84,8 @@ class Projects extends Component{
   }
 
   openProjectDetails(rowData){
-       //const { navigate } = this.props.navigation;
-       //navigate('Project', { project: rowData});
+       const { navigate } = this.props.navigation;
+       navigate('Project', { project: rowData});
   }
 
   renderRow(rowData, sectionID, rowID) {
@@ -107,7 +108,7 @@ class Projects extends Component{
         let daysStatus = api.getDaysDifference(endTime);
     return (
           <TouchableOpacity 
-            onPress={()=> {}}
+            onPress={()=> {this.openProjectDetails(rowData)}}
             underlayColor='#E0E0E0'
             style={styles.rowStyle}
             elevation={10}>
@@ -249,6 +250,20 @@ class Projects extends Component{
       })
     }
   }
+
+  serachProject(text){
+    if(text && localProjects){
+      let temp = text.toLowerCase();
+      let seracheData = localProjects.filter((obj, index) =>{
+          return (obj.title.toLowerCase().indexOf(temp) > -1);
+      });
+      this.setState({
+        dataSource:ds.cloneWithRows(seracheData),
+        isProjects:true,
+        loadingMore:false
+      });
+    }
+  }
   
   render(){
     const { navigate } = this.props.navigation;
@@ -274,7 +289,7 @@ class Projects extends Component{
                     placeholder ="serch by name"
                     placeholderTextColor ="#FFF"
                     underlineColorAndroid ='transparent'
-                    onChangeText={(text) => {}}/>
+                    onChangeText={(text) => {this.serachProject(text)}}/>
               
              </View>
              <View style={styles.sideContainer}>
