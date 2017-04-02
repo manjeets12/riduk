@@ -5,12 +5,14 @@ var{ combineReducers } = require('redux');
 import nav from './navigator';
 import user from './user';
 import imgModal from './imgModal';
+import musejam from './musejam';
 
 
 const rootReducer = combineReducers({
   nav,
   user,
-  imgModal
+  imgModal,
+  musejam
 });
 
 export default rootReducer

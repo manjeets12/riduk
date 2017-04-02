@@ -38,7 +38,7 @@ class LeftDrawer extends Component{
               <View>
               {
                   Object.keys(routes).map((item,index)=>{
-                    return ((index === 0 || item ==="Dashboard")?null:
+                    return ((index === 0)?null:
                       (<TouchableOpacity 
                         key={index} style={{marginBottom:0.5}} 
                            onPress={()=>{navigation.navigate(item)}}>

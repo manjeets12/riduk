@@ -4,6 +4,7 @@ import {
     View,
     Image, 
     Text, 
+    TextInput,
     TouchableHighlight, 
     TouchableOpacity, 
     Dimensions,
@@ -29,6 +30,12 @@ const Header =(props)=>{
 			    </TouchableOpacity>)}
              </View>
              <View style={styles.middleContainer}>
+                <TextInput
+                            style={styles.formInput}
+                            placeholder ="serch by name"
+                            placeholderTextColor ="#333"
+                            underlineColorAndroid ='transparent'
+                            onChangeText={(text) => {}}/>
              	<Text style={[styles.boldText,{paddingLeft:20}]}>{title}</Text>
              </View>
              <View style={styles.sideContainer}>

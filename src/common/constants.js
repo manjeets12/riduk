@@ -15,6 +15,12 @@ export const SHARE_ICON = require('src/Images/share.png');
 export const AVATAR = require('src/Images/avatar.jpg');
 export const BACKGROUND_IMG = require('src/Images/background.jpg');
 export const CAMERA_ICON_BLACK = require('src/Images/camera_black.png');
+export const FILTER_WHITE = require('src/Images/filter_white.png');
+export const SORT_WHITE = require('src/Images/sort_white.png');
+export const MENU = require('src/Images/menu.png');
+export const SEARCH = require('src/Images/search.png');
+
+
 
 
 
@@ -35,6 +41,11 @@ export const FETCHING = 'FETCHING';
 export const FETCH_SUCCESS = 'FETCH_SUCCESS';
 export const FETCH_ERROR = 'FETCH_ERROR';
 export const FETCH_FROM_URL_SUCCESS ='FETCH_FROM_URL_SUCCESS';
+export const UPDATE_DATASOURCE = 'UPDATE_DATASOURCE';
+export const TAKE_SET = 'TAKE_SET';
+
+
+  
 
 
 

@@ -89,6 +89,18 @@ var api = {
             } else {
                 return false;
             }
+    },
+
+    getDaysDifference(time){
+      let date = new Date(time);
+      let currentDate = new Date();
+      let timeDiff = currentDate.getTime() - date.getTime();
+      let diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+      if(timeDiff > 0){
+        return "Ended " + Math.abs(diffDays) +" Days Back";
+      }else{
+        return "No of Days To Go-" + Math.abs(diffDays);
+      }
     }
 
 

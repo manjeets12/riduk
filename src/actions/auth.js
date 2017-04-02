@@ -113,6 +113,7 @@ export const loginWithFacebook = function(){
           token:token, 
           secret:userId
         };
+        dispatch(authenticating());
         dispatch(loginWithCredentials(Object.assign({},credentials)));
       } else {
         console.log("Error: ", error);
@@ -137,7 +138,6 @@ export const loginWithGoogle = function(){
 
 export const loginWithCredentials =function(credential){
   return dispatch =>{
-    dispatch(authenticating());
     firebase.auth().signInWithCredential(credential)
     .then((user) => {
       console.log('user created', user);

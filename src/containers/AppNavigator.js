@@ -22,6 +22,9 @@ import SignUp from 'src/screens/signUp'
 import ForgotPassword from 'src/screens/forgotPassword'
 
 //after login scenes
+//import {Musejam} from 'src/screens/musejam';
+import Projects from 'src/screens/musejam/projects';
+import Project from 'src/screens/musejam/details'
 import Dashboard from 'src/screens/dashboard'
 import UserProfile from 'src/screens/userProfile'
 import DrawerContent from 'src/screens/drawer'
@@ -33,15 +36,19 @@ const routesConfig = {
   SignUp: { screen: SignUp },
   ForgotPassword: { screen: ForgotPassword },
   Dashboard:{screen:Dashboard},
+  Projects:{screen:Projects},
+  Project:{screen:Project},
   UserProfile:{screen:UserProfile},
 };
 const mainDrawerRoutes ={
+    Projects:{screen:Projects},
+    Project:{screen:Project},
     Dashboard:{screen:AppNavStack},
     UserProfile:{screen:UserProfile},
 }
 export const AppBeforeLogin = StackNavigator(routesConfig);
 
-export const AppNavStack = StackNavigator(routesConfig,{initialRouteName:'Dashboard'});
+export const AppNavStack = StackNavigator(routesConfig,{initialRouteName:'Projects'});
 
 export const AppNavigator = DrawerNavigator({
     Dashboard:{screen:AppNavStack},

@@ -196,6 +196,12 @@ const styles=StyleSheet.create({
     fullWidth:{
         width:width-40,
     },
+    sideGap20:{
+        width:width-20
+    },
+    width100:{
+        width:width
+    },
     customRow:{
         flexDirection:'row', 
         alignItems:'center', 
@@ -204,6 +210,20 @@ const styles=StyleSheet.create({
         borderBottomColor:'#e0e0e0', 
         paddingTop:10, 
         paddingBottom:10
+    },
+    rowStyle:{
+        marginTop:0,
+        marginBottom:16,
+        justifyContent:'center', 
+        backgroundColor:'#FFFFFF',
+        borderWidth:1,
+        borderColor:'#FCFCFC',
+        padding:10,
+        shadowColor:'#000',
+        shadowOffset:{width: 0, height: 3},
+        shadowOpacity: 0.1,
+        shadowRadius: 1.5,
+        elevation: 5
     }
 });
 
