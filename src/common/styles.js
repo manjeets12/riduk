@@ -224,6 +224,21 @@ const styles=StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 1.5,
         elevation: 5
+    },
+    custtomCard:{
+        justifyContent:'center',
+        alignItems:'center', 
+        backgroundColor:'#FFFFFF',
+        borderWidth:1,
+        borderColor:'#FCFCFC',
+        padding:10,
+        marginLeft:10,
+        marginRight:10,
+        shadowColor:'#000',
+        shadowOffset:{width: 0, height: 3},
+        shadowOpacity: 0.1,
+        shadowRadius: 1.5,
+        elevation: 5
     }
 });
 

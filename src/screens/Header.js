@@ -17,7 +17,7 @@ import api from 'src/common/api';
 const {height, width} = Dimensions.get('window');
 
 const Header =(props)=>{
-	let {title, isBackButton,rightIcon,renderRightIcon} =props;
+	let {title, isBackButton,rightIcon,renderRightIcon, renderLfetIcon} =props;
     return (
          <View style={styles.headerContainer}>
              <View style={styles.sideContainer}>
@@ -28,14 +28,9 @@ const Header =(props)=>{
 			        source={require('src/Images/back-arrow.png')}
 			      />
 			    </TouchableOpacity>)}
+                {renderLfetIcon()}
              </View>
              <View style={styles.middleContainer}>
-                <TextInput
-                            style={styles.formInput}
-                            placeholder ="serch by name"
-                            placeholderTextColor ="#333"
-                            underlineColorAndroid ='transparent'
-                            onChangeText={(text) => {}}/>
              	<Text style={[styles.boldText,{paddingLeft:20}]}>{title}</Text>
              </View>
              <View style={styles.sideContainer}>
@@ -48,12 +43,14 @@ Header.propTypes={
     title:React.PropTypes.string.isRequired,
     rightIcon:React.PropTypes.string,
     isBackButton:React.PropTypes.bool,
-    renderRightIcon:React.PropTypes.func
+    renderRightIcon:React.PropTypes.func,
+    renderLfetIcon:React.PropTypes.func,
 };
 Header.defaultProps = {
   title: '',
   isBackButton:true,
-  renderRightIcon:()=>{}
+  renderRightIcon:()=>{},
+  renderLfetIcon:() =>{}
 };
 
 module.exports = Header;

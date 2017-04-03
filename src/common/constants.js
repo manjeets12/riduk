@@ -19,6 +19,7 @@ export const FILTER_WHITE = require('src/Images/filter_white.png');
 export const SORT_WHITE = require('src/Images/sort_white.png');
 export const MENU = require('src/Images/menu.png');
 export const SEARCH = require('src/Images/search.png');
+export const DELETE_ICON = require('src/Images/delete.png');
 
 
 
@@ -43,9 +44,11 @@ export const FETCH_ERROR = 'FETCH_ERROR';
 export const FETCH_FROM_URL_SUCCESS ='FETCH_FROM_URL_SUCCESS';
 export const UPDATE_DATASOURCE = 'UPDATE_DATASOURCE';
 export const TAKE_SET = 'TAKE_SET';
+export const RESET_TRACKS ='RESET_TRACKS';
 
 
-  
+//for cubical task
+export const BASE_CUBICAL_URL = "http://itunes.apple.com/search?";
 
 
 

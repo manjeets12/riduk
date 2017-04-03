@@ -23,6 +23,7 @@ import ForgotPassword from 'src/screens/forgotPassword'
 
 //after login scenes
 //import {Musejam} from 'src/screens/musejam';
+import Cubical from 'src/screens/cubical';
 import Projects from 'src/screens/musejam/projects';
 import Project from 'src/screens/musejam/details'
 import Dashboard from 'src/screens/dashboard'
@@ -39,8 +40,10 @@ const routesConfig = {
   Projects:{screen:Projects},
   Project:{screen:Project},
   UserProfile:{screen:UserProfile},
+  Cubical:{screen:Cubical}
 };
 const mainDrawerRoutes ={
+    Cubical:{screen:Cubical},
     Projects:{screen:Projects},
     Project:{screen:Project},
     Dashboard:{screen:AppNavStack},
@@ -48,7 +51,7 @@ const mainDrawerRoutes ={
 }
 export const AppBeforeLogin = StackNavigator(routesConfig);
 
-export const AppNavStack = StackNavigator(routesConfig,{initialRouteName:'Projects'});
+export const AppNavStack = StackNavigator(routesConfig,{initialRouteName:'Cubical'});
 
 export const AppNavigator = DrawerNavigator({
     Dashboard:{screen:AppNavStack},

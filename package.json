@@ -15,6 +15,7 @@
     "react-native-firebase": "^1.0.0-alpha10",
     "react-native-image-crop-picker": "^0.12.9",
     "react-native-photo-browser": "^0.2.2",
+    "react-native-scrollable-tab-view": "^0.6.3",
     "react-navigation": "^1.0.0-beta.7",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
