@@ -7,9 +7,10 @@ import { NavigationActions} from 'react-navigation';
 import {connect } from 'react-redux';
 import ActionSheet from 'react-native-actionsheet';
 import ImagePicker from 'react-native-image-crop-picker';
+import firebase from 'src/common/firebase';
 
 //import VoxImplant from "react-native-voximplant";
-import {logout} from 'src/actions/auth';
+import {logout, reloadUser} from 'src/actions/auth';
 import {startUpload} from 'src/actions/uploads'
 import api from 'src/common/api';
 import styles from 'src/common/styles';
@@ -42,15 +43,33 @@ const renderRight=(state) =>{
 class UserProfile extends Component{
 	constructor(props){
 		super(props);
+    this.ref = null;
 		this.show = this.show.bind(this);
 		this._handlePress = this._handlePress.bind(this);
+    this.uploadProfilePic = this.uploadProfilePic.bind(this);
 	}
 	componentDidMount() {
-      this.props.navigation.setParams({ showActionsheet: this.show });
+      
   }
+  componentDidMount() {
+    let {uid} = this.props.user;
+    this.props.navigation.setParams({ showActionsheet: this.show });
+    this.props.reloadUser();
+    this.ref = firebase.database().ref('users/'+uid);
+    this.ref.on('value', this.handleUserUpdate);
+  }
+  componentWillUnmount() {
+    if (this.ref) {
+      this.ref.off('value', this.handleUserUpdate);
+    }
+  }
+  handleUserUpdate = (snapshot) => {
+    console.log("user updates - ", snapshot);
+  }
+
 	show() {
         this.ActionSheet.show();
-    }
+  }
     _handlePress(index) {
         switch(index){
           case 1:this.props.openDrawer();
@@ -63,7 +82,13 @@ class UserProfile extends Component{
     }
 
     openImageOptions(){
-    	this.ImagePicker.show();
+      
+      ImagePicker.openPicker(imageOptions).then((image) => {
+          //this.props.startUpload({url:url,path:image.path});
+          this.uploadProfilePic(image.path)
+          console.log(image);
+      });
+    	//this.ImagePicker.show();
     }
 
     handleImagePicker(index){
@@ -94,6 +119,37 @@ class UserProfile extends Component{
           break;
         }
     }
+
+  uploadProfilePic(path){
+    let {uid,displayName, email} = this.props.user;
+    let timeStamp = new Date().getTime();
+    let url = 'Images/'+timeStamp;
+    const unsubscribe = firebase.storage()
+                .ref(url)
+                .putFile(path,{contentType: 'image/jpeg'})
+                .on('state_changed', snapshot => {
+                    console.log(snapshot);
+                }, error => {
+                   console.log(error);
+                    //Error
+                    unsubscribe();
+                }, uploadedFile => {
+                    //Success
+                    console.log(uploadedFile);
+                    //let avatar =["http://localhost:8081/index.android.bundle?platform=android&dev=true&hot=false&minify=false", uploadedFile.downloadUrl];
+                    this.ref.set({
+                       avatar,
+                    })   //setting user to database
+                    .then((response) =>{
+                      console.log(response);
+                    })
+                    .catch((error) => {
+                      console.log('An error occurred', error);
+                    });
+                    unsubscribe();
+                });
+
+  }
 
 	renderLoader(){
 		return(
@@ -154,6 +210,7 @@ const mapDispatchToProps = (dispatch) => {
    return {
    	logout: () => dispatch(logout()),
    	startUpload:(data) =>dispatch(startUpload(data)),
+    reloadUser:()=>dispatch(reloadUser())
    	//openDrawer:() => dispatch(NavigationActions.navigate({ routeName: 'Dashboard' }))
    }
 };

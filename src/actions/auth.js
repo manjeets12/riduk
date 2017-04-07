@@ -2,6 +2,7 @@
 
 import firebase from 'src/common/firebase';
 import {FBLoginManager} from 'react-native-facebook-login';
+import {GoogleSignin} from 'react-native-google-signin';
 
 //import api from 'src/common/api';
 import { NavigationActions} from 'react-navigation';
@@ -17,7 +18,7 @@ import {
   SHOW_LOADING_OVERLAY, 
   HIDE_LOADING_OVERLAY,
   LOGGED_OUT,
-  LOGGED_OUT_FAILED
+  LOGGED_OUT_FAILED,
 } from 'src/common/constants'
 //import {AsyncStorage} from 'react-native';
 
@@ -45,7 +46,18 @@ export const authError= function(data){
         data,
       }
 }
-
+export const reloadUser = function(){
+  return dispatch =>{
+      firebase.auth().currentUser
+      .reload()
+      .then((user) => {
+        console.log(user);
+      })
+      .catch(error =>{
+        console.log(error);
+      });
+  }
+}
 export const registerUser= function(data){
   let {username, email, password} = data;
   return dispatch => {
@@ -92,13 +104,23 @@ export const login= function(data){
     .then((user) => {
       console.log('user created', user);
       dispatch(authSuccess(user._user));
-      //dispatch(authenticated());
-      //dispatch(NavigationActions.navigate({ routeName: 'UserProfile' }));
     })
     .catch((error) => {
       console.log('An error occurred', error);
       dispatch(authError(error));
     });
+  }
+}
+export const sendEmailVerification = function(){
+  return dispatch =>{
+    firebase.auth().currentUser
+      .sendEmailVerification()
+      .then(response=>{
+        console.log(response);
+      })
+      .catch(error =>{
+        console.log(error);
+      });
   }
 }
 
@@ -124,14 +146,14 @@ export const loginWithFacebook = function(){
 
 export const loginWithGoogle = function(){
   return dispatch =>{
-    FBLoginManager.logout((err, data) => {
-         const result = err || data;
-          if(result.type === 'success' && result.profile){
-           console.log(result);
-          }else{
-            console.log(err);
-          }
-     });
+    GoogleSignin.signIn()
+    .then((user) => {
+      console.log(user);
+    })
+    .catch((err) => {
+      console.log('WRONG SIGNIN', err);
+    })
+    .done();
   }
 }
 
@@ -149,6 +171,7 @@ export const loginWithCredentials =function(credential){
     });
   }
 }
+
 
 
 export const logoutSuccess= function(){

@@ -36,6 +36,8 @@ export const SHOW_LOADING_OVERLAY ='SHOW_LOADING_OVERLAY';
 export const HIDE_LOADING_OVERLAY ='HIDE_LOADING_OVERLAY';
 export const LOGGED_OUT ='LOGGED_OUT';
 export const LOGGED_OUT_FAILED ='LOGGED_OUT_FAILED';
+export const GET_CONTACTS_SUCCESS = 'GET_CONTACTS_SUCCESS';
+export const GET_CONTACTS_ERROR = 'GET_CONTACTS_ERROR';
 
 //for image processor using clarifai api;
 export const FETCHING = 'FETCHING';

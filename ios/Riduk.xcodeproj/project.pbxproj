@@ -37,6 +37,12 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		C753DB455D9A4B3E8D82D31A /* libimageCropPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3650B6E7EA9C46358D6D4FAB /* libimageCropPicker.a */; };
 		3EA46E6107DD4AAFBC51054F /* libRCTFBLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F12A734BE8164FA189C3B055 /* libRCTFBLogin.a */; };
+		CDF61ADFF92D4566B712A1D1 /* libRCTContacts.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6260B32AF58C4143BA7E7CFA /* libRCTContacts.a */; };
+		D13DFF41611E4B9A94DD6DD4 /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 950AFF8CBFDA4943890824D7 /* libRNGoogleSignin.a */; };
+		E1B3A7A2E2C448CFA4268A77 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D76B5CC58EA41E0BBFCB84D /* libz.tbd */; };
+		433855808AC146E0BE95B87E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8167406B0CB440FF8841E0EF /* SafariServices.framework */; };
+		4E42F6739C584F61AF83319B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33DD353A1E84105B723EB90 /* SystemConfiguration.framework */; };
+		A1A7EE2D045A4D8388E7A1E5 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22887D8C0B654C2084599A86 /* AddressBook.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -260,6 +266,14 @@
 		3650B6E7EA9C46358D6D4FAB /* libimageCropPicker.a */ = {isa = PBXFileReference; name = "libimageCropPicker.a"; path = "libimageCropPicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		55B35F0407584F4B9D9CA89C /* RCTFBLogin.xcodeproj */ = {isa = PBXFileReference; name = "RCTFBLogin.xcodeproj"; path = "../node_modules/react-native-facebook-login/RCTFBLogin.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		F12A734BE8164FA189C3B055 /* libRCTFBLogin.a */ = {isa = PBXFileReference; name = "libRCTFBLogin.a"; path = "libRCTFBLogin.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		4B5390A08D2D41F1A05D3991 /* RCTContacts.xcodeproj */ = {isa = PBXFileReference; name = "RCTContacts.xcodeproj"; path = "../node_modules/react-native-contacts/ios/RCTContacts.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		6260B32AF58C4143BA7E7CFA /* libRCTContacts.a */ = {isa = PBXFileReference; name = "libRCTContacts.a"; path = "libRCTContacts.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		1101CC99B63C4BB59A091087 /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; name = "RNGoogleSignin.xcodeproj"; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		950AFF8CBFDA4943890824D7 /* libRNGoogleSignin.a */ = {isa = PBXFileReference; name = "libRNGoogleSignin.a"; path = "libRNGoogleSignin.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		9D76B5CC58EA41E0BBFCB84D /* libz.tbd */ = {isa = PBXFileReference; name = "libz.tbd"; path = "usr/lib/libz.tbd"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = sourcecode.text-based-dylib-definition; explicitFileType = undefined; includeInIndex = 0; };
+		8167406B0CB440FF8841E0EF /* SafariServices.framework */ = {isa = PBXFileReference; name = "SafariServices.framework"; path = "System/Library/Frameworks/SafariServices.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		A33DD353A1E84105B723EB90 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		22887D8C0B654C2084599A86 /* AddressBook.framework */ = {isa = PBXFileReference; name = "AddressBook.framework"; path = "System/Library/Frameworks/AddressBook.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +302,12 @@
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				C753DB455D9A4B3E8D82D31A /* libimageCropPicker.a in Frameworks */,
 				3EA46E6107DD4AAFBC51054F /* libRCTFBLogin.a in Frameworks */,
+				CDF61ADFF92D4566B712A1D1 /* libRCTContacts.a in Frameworks */,
+				D13DFF41611E4B9A94DD6DD4 /* libRNGoogleSignin.a in Frameworks */,
+				E1B3A7A2E2C448CFA4268A77 /* libz.tbd in Frameworks */,
+				433855808AC146E0BE95B87E /* SafariServices.framework in Frameworks */,
+				4E42F6739C584F61AF83319B /* SystemConfiguration.framework in Frameworks */,
+				A1A7EE2D045A4D8388E7A1E5 /* AddressBook.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +476,8 @@
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
 				294B7205AD204ED896419E96 /* imageCropPicker.xcodeproj */,
 				55B35F0407584F4B9D9CA89C /* RCTFBLogin.xcodeproj */,
+				4B5390A08D2D41F1A05D3991 /* RCTContacts.xcodeproj */,
+				1101CC99B63C4BB59A091087 /* RNGoogleSignin.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -476,6 +498,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* RidukTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				070ACBD62F0E488DB0E7F8E9 /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -490,6 +513,18 @@
 				2D02E4901E0B4A5D006451C7 /* Riduk-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		070ACBD62F0E488DB0E7F8E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D76B5CC58EA41E0BBFCB84D /* libz.tbd */,
+				8167406B0CB440FF8841E0EF /* SafariServices.framework */,
+				A33DD353A1E84105B723EB90 /* SystemConfiguration.framework */,
+				22887D8C0B654C2084599A86 /* AddressBook.framework */,
+			);
+			name = Frameworks;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -983,6 +1018,8 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riduk.app/Riduk";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1003,6 +1040,8 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riduk.app/Riduk";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;
@@ -1067,6 +1106,8 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1096,6 +1137,8 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;
@@ -1120,6 +1163,8 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1144,6 +1189,8 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;

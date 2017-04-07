@@ -43,15 +43,15 @@ const routesConfig = {
   Cubical:{screen:Cubical}
 };
 const mainDrawerRoutes ={
+    Dashboard:{screen:AppNavStack},
     Cubical:{screen:Cubical},
     Projects:{screen:Projects},
     Project:{screen:Project},
-    Dashboard:{screen:AppNavStack},
     UserProfile:{screen:UserProfile},
 }
 export const AppBeforeLogin = StackNavigator(routesConfig);
 
-export const AppNavStack = StackNavigator(routesConfig,{initialRouteName:'Cubical'});
+export const AppNavStack = StackNavigator(routesConfig,{initialRouteName:'Dashboard'});
 
 export const AppNavigator = DrawerNavigator({
     Dashboard:{screen:AppNavStack},

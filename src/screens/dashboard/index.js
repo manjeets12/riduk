@@ -7,11 +7,12 @@ import {connect } from 'react-redux';
 import Chats from './tabs/ChatsTab';
 import Feeds from './tabs/FeedsTab';
 import Maps from './tabs/MapsTab';
-import Tasks from './tabs/TaskTab';
+import Contacts from './tabs/ContactsTab';
+//import Tasks from './tabs/TaskTab';
 import styles from 'src/common/styles';
 
 import {DEFAULT_AVATAR,MORE_ICON} from 'src/common/constants';
-
+import {sendEmailVerification} from 'src/actions/auth';
 
 const renderRight=(state) =>{
         return(
@@ -25,9 +26,9 @@ const renderRight=(state) =>{
 }
 
 const DashboardTabs = TabNavigator({
-  Tasks:{screen:Tasks},
+  //Tasks:{screen:Tasks},
   Feeds: { screen: Feeds },
-  Maps:{screen:Maps},
+  Contacts:{screen:Contacts},
   Chats: { screen: Chats },
 }, 
 {
@@ -63,6 +64,10 @@ class Dashboard extends Component{
 	}
   componentDidMount() {
       this.props.navigation.setParams({ openDrawer: this.openDrawer });
+      let {user} = this.props;
+      if(user && !user.isAnonymous && !user.emailVerified){
+        this.props.sendEmailVerification();
+      }
   }
 
   openDrawer(){
@@ -93,7 +98,8 @@ Dashboard.navigationOptions = {
 
 const mapDispatchToProps = (dispatch) => {
    return {
-   	openDrawer:() => dispatch(NavigationActions.navigate({ routeName: 'Drawer' }))
+   	openDrawer:() => dispatch(NavigationActions.navigate({ routeName: 'Drawer' })),
+    sendEmailVerification:()=>dispatch(sendEmailVerification())
    }
 };
 

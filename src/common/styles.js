@@ -239,7 +239,17 @@ const styles=StyleSheet.create({
         shadowOpacity: 0.1,
         shadowRadius: 1.5,
         elevation: 5
-    }
+    },
+    separator:{
+         flex: 1,
+         height: StyleSheet.hairlineWidth,
+         backgroundColor: '#8E8E8E',
+         //backgroundColor: '#FCFCFC',
+    },
+    cardRow:{
+        justifyContent:'center',
+        padding:10,
+    },
 });
 
 export default styles;

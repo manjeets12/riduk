@@ -40,8 +40,19 @@ export const startUpload= function(data){
     firebase.storage()
     .ref(url)
     .putFile(path,{contentType: 'image/jpeg'})
-    .then(uploadedFile => {
-        console.lgo(uploadedFile);
+    .then(response => {
+       console.log(response);
+       firebase.auth().currentUser
+        .updateProfile({
+          //photoUri: response.downloadUrl,
+          displayName:'Manjeet Singh'
+        })
+        .then(user =>{
+          console.log(user);
+        })
+        .catch(error =>{
+          console.log(error);
+        });
     })
     .catch(error => {
         console.log(error);

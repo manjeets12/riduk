@@ -3,11 +3,14 @@
 import React, {Component} from 'react';
 import {View, Text,Button, Image,ListView,TouchableOpacity, ScrollView,ActivityIndicator,DeviceEventEmitter,Dimensions} from 'react-native';
 import {NavigationActions} from 'react-navigation';
+import Contacts from 'react-native-contacts';
+import {connect } from 'react-redux';
 //import VoxImplant from "react-native-voximplant";
 
 import api from 'src/common/api';
 import styles from 'src/common/styles';
 import Header from '../Header';
+import {getContactsSuccess,getContactsError} from 'src/actions/contacts';
 import {LOGO,CALL_ICON, HEART_ICON, HEART_ICON_RED, ENVELOPE_ICON,DEFAULT_AVATAR} from 'src/common/constants';
 
 //const { width, height } = Dimensions.get('window');
@@ -15,12 +18,29 @@ import {LOGO,CALL_ICON, HEART_ICON, HEART_ICON_RED, ENVELOPE_ICON,DEFAULT_AVATAR
 class LandingScreen extends Component{
 	constructor(props){
 		super(props);
+		this.getContacts = this.getContacts.bind(this);
 	}
+
+	componentDidMount(){
+      this.getContacts()
+    }
 	
+	getContacts(){
+
+      Contacts.getAll((err, contacts) => {
+		  if(err && err.type === 'permissionDenied'){
+		    console.log('please change your setting to invite your friends');
+		    this.props.getContactsError();
+		  } else {
+		    console.log(contacts);
+		    this.props.getContactsSuccess(contacts);
+		  }
+      });
+    }
 	
 
 	render(){
-		 const { navigate, dispatch } = this.props.navigation;
+		const { navigate, dispatch } = this.props.navigation;
 		
 		return(
 			<View style={[styles.container,{backgroundColor:'#E91E63', alignItems:'center'}]}>
@@ -53,4 +73,16 @@ LandingScreen.navigationOptions ={
      },
 }
 
-export default LandingScreen;
+const mapDispatchToProps = (dispatch) => {
+   return {
+      getContactsSuccess: (data) => dispatch(getContactsSuccess(data)),
+      getContactsError:()=>dispatch(getContactsError()),
+  }
+};
+
+const mapStateToProps = (state) => {
+   return {
+     
+   };
+};
+module.exports =  connect(mapStateToProps, mapDispatchToProps)(LandingScreen);

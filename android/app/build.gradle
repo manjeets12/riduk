@@ -138,6 +138,11 @@ android {
 }
 
 dependencies {
+    compile(project(":react-native-google-signin")){         
+        exclude group: "com.google.android.gms"
+    }
+    compile 'com.google.android.gms:play-services-auth:10.2.0'
+    compile project(':react-native-contacts')
     compile project(':react-native-facebook-login')
     compile project(':react-native-image-crop-picker')
     compile project(':react-native-firebase')
@@ -153,4 +158,4 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'

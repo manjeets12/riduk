@@ -12,6 +12,8 @@ import io.invertase.firebase.RNFirebasePackage; //firebase
 import com.reactnative.ivpusic.imagepicker.PickerPackage; //for image uploading
 import com.magus.fblogin.FacebookLoginPackage;  //fb login
 //import com.airbnb.android.react.maps.MapsPackage; //airbnb maps package
+import co.apptailor.googlesignin.RNGoogleSigninPackage; //googgle login
+import com.rt2zz.reactnativecontacts.ReactNativeContacts; //contatcs api
 
 import java.util.Arrays;
 import java.util.List;
@@ -30,7 +32,9 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
           new RNFirebasePackage(),
           new PickerPackage(),
-          new FacebookLoginPackage()
+          new FacebookLoginPackage(),
+          new RNGoogleSigninPackage(),
+          new ReactNativeContacts()
           //new MapsPackage()
 
       );

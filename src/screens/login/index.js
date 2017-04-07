@@ -15,6 +15,8 @@ import {
 	TextInput
 } from 'react-native';
 import {connect } from 'react-redux';
+//import {FBLoginManager} from'react-native-facebook-login';
+import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 
 
 import api from 'src/common/api';
@@ -35,6 +37,32 @@ class Login extends Component{
 		}
 		this.updateInputValue = this.updateInputValue.bind(this);
 	}
+	componentDidMount(){
+        GoogleSignin.hasPlayServices({ autoResolve: true }).then(() => {
+            // play services are available. can now configure library
+        })
+        .catch((err) => {
+          console.log("Play services error", err.code, err.message);
+        });
+        GoogleSignin.configure({
+          scopes: ['https://www.google.com/m8/feeds/'], // what API you want to access on behalf of the user, default is email and profile
+          //iosClientId: <FROM DEVELOPER CONSOLE>, // only for iOS
+          webClientId: "9937259539-88eh07kk7i5rtindk9q1sgiv3vmasjt1.apps.googleusercontent.com"	, // client ID of type WEB for your server (needed to verify user ID and offline access)
+         
+        })
+        .then(() => {
+          // you can now call currentUserAsync()
+        });
+        GoogleSignin.configure({
+          scopes: ['https://www.google.com/m8/feeds/'], // what API you want to access on behalf of the user, default is email and profile
+          //iosClientId: <FROM DEVELOPER CONSOLE>, // only for iOS
+          //webClientId: <FROM DEVELOPER CONSOLE>, // client ID of type WEB for your server (needed to verify user ID and offline access)
+         
+        })
+        .then(() => {
+          // you can now call currentUserAsync()
+        });
+    }
 	/*componentWillReceiveProps(nextProps) {
 		if(user.authenticating != oldUser.authenticating){
 			this.setState()
