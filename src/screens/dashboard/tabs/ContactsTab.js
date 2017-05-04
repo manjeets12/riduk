@@ -13,7 +13,7 @@ class Contacts extends Component{
 	}
   renderItem({item, index}){
       let {givenName, familyName, middleName, phoneNumbers, emailAddresses} = item;
-      let name = (givenName || "")+(middleName || "")+(familyName+"");
+      let name = (givenName || "")+(middleName || "")+(familyName + "");
       let mail = emailAddresses[0];
       let phone = phoneNumbers[0];
 

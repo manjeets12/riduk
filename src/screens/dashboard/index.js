@@ -8,6 +8,7 @@ import Chats from './tabs/ChatsTab';
 import Feeds from './tabs/FeedsTab';
 import Maps from './tabs/MapsTab';
 import Contacts from './tabs/ContactsTab';
+import Videos from './tabs/VideosTab';
 //import Tasks from './tabs/TaskTab';
 import styles from 'src/common/styles';
 
@@ -26,9 +27,9 @@ const renderRight=(state) =>{
 }
 
 const DashboardTabs = TabNavigator({
-  //Tasks:{screen:Tasks},
+  Videos:{screen:Videos},
   Feeds: { screen: Feeds },
-  Contacts:{screen:Contacts},
+  //Contacts:{screen:Contacts},
   Chats: { screen: Chats },
 }, 
 {

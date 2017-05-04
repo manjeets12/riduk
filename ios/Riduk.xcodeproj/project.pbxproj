@@ -43,6 +43,7 @@
 		433855808AC146E0BE95B87E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8167406B0CB440FF8841E0EF /* SafariServices.framework */; };
 		4E42F6739C584F61AF83319B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A33DD353A1E84105B723EB90 /* SystemConfiguration.framework */; };
 		A1A7EE2D045A4D8388E7A1E5 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22887D8C0B654C2084599A86 /* AddressBook.framework */; };
+		E16C19DAE24E4EDDB1B4EF4A /* libRCTVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 581A6099CDC8427387A47F3F /* libRCTVideo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,6 +275,8 @@
 		8167406B0CB440FF8841E0EF /* SafariServices.framework */ = {isa = PBXFileReference; name = "SafariServices.framework"; path = "System/Library/Frameworks/SafariServices.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		A33DD353A1E84105B723EB90 /* SystemConfiguration.framework */ = {isa = PBXFileReference; name = "SystemConfiguration.framework"; path = "System/Library/Frameworks/SystemConfiguration.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		22887D8C0B654C2084599A86 /* AddressBook.framework */ = {isa = PBXFileReference; name = "AddressBook.framework"; path = "System/Library/Frameworks/AddressBook.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		44F7D54ED833407BAD38AB2A /* RCTVideo.xcodeproj */ = {isa = PBXFileReference; name = "RCTVideo.xcodeproj"; path = "../node_modules/react-native-video/ios/RCTVideo.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		581A6099CDC8427387A47F3F /* libRCTVideo.a */ = {isa = PBXFileReference; name = "libRCTVideo.a"; path = "libRCTVideo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +311,7 @@
 				433855808AC146E0BE95B87E /* SafariServices.framework in Frameworks */,
 				4E42F6739C584F61AF83319B /* SystemConfiguration.framework in Frameworks */,
 				A1A7EE2D045A4D8388E7A1E5 /* AddressBook.framework in Frameworks */,
+				E16C19DAE24E4EDDB1B4EF4A /* libRCTVideo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +482,7 @@
 				55B35F0407584F4B9D9CA89C /* RCTFBLogin.xcodeproj */,
 				4B5390A08D2D41F1A05D3991 /* RCTContacts.xcodeproj */,
 				1101CC99B63C4BB59A091087 /* RNGoogleSignin.xcodeproj */,
+				44F7D54ED833407BAD38AB2A /* RCTVideo.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1018,8 +1023,6 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riduk.app/Riduk";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1040,8 +1043,6 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Riduk.app/Riduk";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;
@@ -1106,8 +1107,6 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1137,8 +1136,6 @@
 				TVOS_DEPLOYMENT_TARGET = 9.2;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;
@@ -1163,8 +1160,6 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1189,8 +1184,6 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
-					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;

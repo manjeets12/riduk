@@ -29,6 +29,7 @@ import Project from 'src/screens/musejam/details'
 import Dashboard from 'src/screens/dashboard'
 import UserProfile from 'src/screens/userProfile'
 import DrawerContent from 'src/screens/drawer'
+//import VideoPlayer from 'src/screens/VideoPlayer';
 
 
 const routesConfig = {
@@ -40,7 +41,8 @@ const routesConfig = {
   Projects:{screen:Projects},
   Project:{screen:Project},
   UserProfile:{screen:UserProfile},
-  Cubical:{screen:Cubical}
+  Cubical:{screen:Cubical},
+  //VideoPlayer:{screen:VideoPlayer}
 };
 const mainDrawerRoutes ={
     Dashboard:{screen:AppNavStack},

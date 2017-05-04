@@ -250,6 +250,12 @@ const styles=StyleSheet.create({
         justifyContent:'center',
         padding:10,
     },
+     backgroundVideo: {
+        position:'absolute',
+        height:200,
+        width:width,
+        top:0.5*width,
+    },
 });
 
 export default styles;

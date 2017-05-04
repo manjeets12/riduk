@@ -3,7 +3,7 @@
 import React, {Component} from 'react';
 import {View, Text,Button, Image,ListView,TouchableOpacity, ScrollView,ActivityIndicator,DeviceEventEmitter,Dimensions} from 'react-native';
 import {NavigationActions} from 'react-navigation';
-import Contacts from 'react-native-contacts';
+//import Contacts from 'react-native-contacts';
 import {connect } from 'react-redux';
 //import VoxImplant from "react-native-voximplant";
 
@@ -27,15 +27,15 @@ class LandingScreen extends Component{
 	
 	getContacts(){
 
-      Contacts.getAll((err, contacts) => {
-		  if(err && err.type === 'permissionDenied'){
-		    console.log('please change your setting to invite your friends');
-		    this.props.getContactsError();
-		  } else {
-		    console.log(contacts);
-		    this.props.getContactsSuccess(contacts);
-		  }
-      });
+      // Contacts.getAll((err, contacts) => {
+		  // if(err && err.type === 'permissionDenied'){
+		  //   console.log('please change your setting to invite your friends');
+		  //   this.props.getContactsError();
+		  // } else {
+		  //   console.log(contacts);
+		  //   this.props.getContactsSuccess(contacts);
+		  // }
+      // });
     }
 	
 

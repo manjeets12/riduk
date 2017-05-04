@@ -2,7 +2,7 @@
 
 import firebase from 'src/common/firebase';
 import {FBLoginManager} from 'react-native-facebook-login';
-import {GoogleSignin} from 'react-native-google-signin';
+//import {GoogleSignin} from 'react-native-google-signin';
 
 //import api from 'src/common/api';
 import { NavigationActions} from 'react-navigation';
@@ -113,14 +113,14 @@ export const login= function(data){
 }
 export const sendEmailVerification = function(){
   return dispatch =>{
-    firebase.auth().currentUser
-      .sendEmailVerification()
-      .then(response=>{
-        console.log(response);
-      })
-      .catch(error =>{
-        console.log(error);
-      });
+    // firebase.auth().currentUser
+    //   .sendEmailVerification()
+    //   .then(response=>{
+    //     console.log(response);
+    //   })
+    //   .catch(error =>{
+    //     console.log(error);
+    //   });
   }
 }
 
@@ -146,14 +146,14 @@ export const loginWithFacebook = function(){
 
 export const loginWithGoogle = function(){
   return dispatch =>{
-    GoogleSignin.signIn()
-    .then((user) => {
-      console.log(user);
-    })
-    .catch((err) => {
-      console.log('WRONG SIGNIN', err);
-    })
-    .done();
+    // GoogleSignin.signIn()
+    // .then((user) => {
+    //   console.log(user);
+    // })
+    // .catch((err) => {
+    //   console.log('WRONG SIGNIN', err);
+    // })
+    // .done();
   }
 }
 
