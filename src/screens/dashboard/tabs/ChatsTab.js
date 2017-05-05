@@ -23,9 +23,7 @@ class Chats extends Component{
 	}
 }
 Chats.navigationOptions = {
-  tabBar: {
-    label: 'Chats',
-  },
+  tabBarLabel: 'Chats',
 };
 
 

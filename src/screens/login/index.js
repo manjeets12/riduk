@@ -189,13 +189,11 @@ class Login extends Component{
 
 Login.navigationOptions = {
     title: 'Login',
-    header: navigation => ({
-      style: {backgroundColor:'#E91E63'},
-      tintColor: '#FFF',
-      titleStyle: {
-        color: '#FFF'
-      }
-    })
+    headerStyle: {backgroundColor:'#E91E63'},
+	headerTintColor: '#FFF',
+	headerTitleStyle: {
+	color: '#FFF'
+	}
 };
 
 const mapDispatchToProps = (dispatch) => {

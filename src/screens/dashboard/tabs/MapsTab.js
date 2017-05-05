@@ -24,9 +24,7 @@ class Maps extends Component{
 }
 
 Maps.navigationOptions = {
-  tabBar: {
-    label: 'Maps',
-  },
+  tabBarLabel: 'Maps',
 };
 
 const mapDispatchToProps = (dispatch) => {

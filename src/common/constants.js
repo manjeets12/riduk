@@ -1,7 +1,7 @@
 'use strict';
 
 //local images
-export const LOGO = require('src/Images/mainLogo.jpg');
+export const LOGO = require('src/Images/mainLogo.png');
 export const BACK_ICON = require('src/Images/back-arrow.png');
 export const CALL_ICON = require('src/Images/call.png');
 export const DEFAULT_AVATAR = require('src/Images/default-avatar.png');
@@ -12,8 +12,8 @@ export const MORE_ICON = require('src/Images/more.png');
 export const STAR_ICON = require('src/Images/star.png');
 export const USER_ICON = require('src/Images/user.png');
 export const SHARE_ICON = require('src/Images/share.png');
-export const AVATAR = require('src/Images/avatar.jpg');
-export const BACKGROUND_IMG = require('src/Images/background.jpg');
+//export const AVATAR = require('src/Images/avatar.jpg');
+export const BACKGROUND_IMG = require('src/Images/background.png');
 export const CAMERA_ICON_BLACK = require('src/Images/camera_black.png');
 export const FILTER_WHITE = require('src/Images/filter_white.png');
 export const SORT_WHITE = require('src/Images/sort_white.png');
@@ -52,5 +52,9 @@ export const RESET_TRACKS ='RESET_TRACKS';
 //for cubical task
 export const BASE_CUBICAL_URL = "http://itunes.apple.com/search?";
 
+//camera
+export const GET_CAMERA ="GET_CAMERA";
+export const ADD_CAMERA ="ADD_CAMERA";
+export const DELETE_CAMERA="DELETE_CAMERA";
 
 

@@ -38,14 +38,9 @@ class ProjectDetails extends Component{
 
 ProjectDetails.navigationOptions = {
     title: 'Projects',
-    header:({ state}) => ({
-      right: renderRight(state),
-      style: {backgroundColor:'#E91E63'},
-      tintColor: '#FFF',
-      titleStyle: {
-        color: '#FFF'
-      }
-    })
+    headerStyle: {backgroundColor:'#E91E63'},
+    headerTintColor: '#FFF',
+    headerTitleStyle: { color: '#FFF'}
 };
 
 const mapDispatchToProps = (dispatch) => {

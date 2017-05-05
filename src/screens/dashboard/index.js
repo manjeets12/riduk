@@ -79,22 +79,16 @@ class Dashboard extends Component{
     	const { navigate } = this.props.navigation;
     	
 		return(
-			<DashboardTabs/ >
+			<DashboardTabs/>
 		);
 	}
 }
 
 Dashboard.navigationOptions = {
     title: 'Dashboard',
-    header:({ state}) => ({
-      //right: renderRight(state),
-      style: {backgroundColor:'#E91E63', elevation:0},
-      tintColor: '#FFF',
-      titleStyle: {
-        color: '#FFF'
-      },
-      //visible:false,
-    })
+    headerStyle: {backgroundColor:'#E91E63'},
+    headerTintColor: '#FFF',
+    headerTitleStyle: { color: '#FFF'}
 };
 
 const mapDispatchToProps = (dispatch) => {

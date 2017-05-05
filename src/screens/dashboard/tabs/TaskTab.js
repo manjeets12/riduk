@@ -244,9 +244,7 @@ class Tasks extends Component{
 }
 
 Tasks.navigationOptions = {
-  tabBar: {
-    label: 'XPrep',
-  },
+  tabBarLabel: 'XPrep',
 };
 
 const mapDispatchToProps = (dispatch) => {

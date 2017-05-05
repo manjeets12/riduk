@@ -35,6 +35,7 @@ public class MainApplication extends Application implements ReactApplication {
           new RNFirebasePackage(),
           new PickerPackage(),
           new FacebookLoginPackage(),
+          //new VLCPlayerPackage()
           //new RNGoogleSigninPackage(),
           //new ReactNativeContacts(),
           //new ReactVideoPackage(),

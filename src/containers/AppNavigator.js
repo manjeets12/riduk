@@ -29,9 +29,15 @@ import Project from 'src/screens/musejam/details'
 import Dashboard from 'src/screens/dashboard'
 import UserProfile from 'src/screens/userProfile'
 import DrawerContent from 'src/screens/drawer'
-//import VideoPlayer from 'src/screens/VideoPlayer';
+import AddCamera from 'src/screens/settings/addCamera'
+import VideoPlayer from 'src/screens/VideoPlayer';
 
-
+/*const StacksOverTabs = StackNavigator({
+  Dashboard:{screen:Dashboard},
+  AddCamera:{screen:AddCamera},
+}, {
+  headerMode: 'none',
+});*/
 const routesConfig = {
   Landing:{screen:LandingScreen},
   Login: { screen: Login },
@@ -42,23 +48,25 @@ const routesConfig = {
   Project:{screen:Project},
   UserProfile:{screen:UserProfile},
   Cubical:{screen:Cubical},
-  //VideoPlayer:{screen:VideoPlayer}
+  AddCamera:{screen:AddCamera},
+  VideoPlayer:{screen:VideoPlayer}
 };
+
+export const AppBeforeLogin = StackNavigator(routesConfig);
+
+export const AppNavStack = StackNavigator({...routesConfig},{initialRouteName:'Dashboard'});
+
 const mainDrawerRoutes ={
     Dashboard:{screen:AppNavStack},
     Cubical:{screen:Cubical},
     Projects:{screen:Projects},
     Project:{screen:Project},
     UserProfile:{screen:UserProfile},
+    AddCamera:{screen:AddCamera}
 }
-export const AppBeforeLogin = StackNavigator(routesConfig);
 
-export const AppNavStack = StackNavigator(routesConfig,{initialRouteName:'Dashboard'});
 
-export const AppNavigator = DrawerNavigator({
-    Dashboard:{screen:AppNavStack},
-    UserProfile:{screen:UserProfile},
-}, {
+export const AppNavigator = DrawerNavigator({...mainDrawerRoutes}, {
   drawerWidth: 0.8*width,
   contentComponent:({navigation})=> <DrawerContent navigation={navigation} routes={mainDrawerRoutes} />,
 });

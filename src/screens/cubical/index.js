@@ -170,9 +170,7 @@ class Cubical extends Component{
 	}
 }
 Cubical.navigationOptions = {
-    header:({ state}) => ({
-      visible:false,
-    })
+    header:null
 };
 
 const mapDispatchToProps = (dispatch) => {

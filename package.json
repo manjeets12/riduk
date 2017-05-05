@@ -7,19 +7,17 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "^16.0.0-alpha.6",
-    "react-native": "^0.43.0",
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.43.0",
     "react-native-actionsheet": "^2.0.6",
     "react-native-contacts": "^0.8.1",
     "react-native-drawer": "^2.3.0",
     "react-native-facebook-login": "^1.4.0",
-    "react-native-firebase": "^1.0.0-alpha10",
+    "react-native-firebase": "^1.0.1",
     "react-native-google-signin": "^0.9.0",
     "react-native-image-crop-picker": "^0.12.9",
-    "react-native-media-kit": "0.0.14",
     "react-native-photo-browser": "^0.2.2",
     "react-native-scrollable-tab-view": "^0.6.3",
-    "react-native-video": "^1.0.0",
     "react-native-video-controls": "^1.2.0",
     "react-native-vlc": "^0.7.0",
     "react-navigation": "git+https://github.com/react-community/react-navigation.git",
@@ -32,7 +30,7 @@
     "babel-jest": "19.0.0",
     "babel-preset-react-native": "1.9.1",
     "jest": "19.0.2",
-    "react-test-renderer": "15.4.2"
+    "react-test-renderer": "16.0.0-alpha.6"
   },
   "jest": {
     "preset": "react-native"

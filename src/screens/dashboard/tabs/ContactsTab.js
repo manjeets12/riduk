@@ -59,9 +59,7 @@ class Contacts extends Component{
 	}
 }
 Contacts.navigationOptions = {
-  tabBar: {
-    label: 'Contacts',
-  },
+  tabBarLabel: 'Contacts',
 };
 
 

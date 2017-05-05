@@ -68,9 +68,7 @@ class LandingScreen extends Component{
 };
 
 LandingScreen.navigationOptions ={
-     header: {
-       visible: false,
-     },
+     header: null
 }
 
 const mapDispatchToProps = (dispatch) => {

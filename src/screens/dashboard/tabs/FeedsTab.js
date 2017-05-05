@@ -24,9 +24,7 @@ class Feeds extends Component{
 }
 
 Feeds.navigationOptions = {
-  tabBar: {
-    label: 'Feeds',
-  },
+  tabBarLabel: 'Feeds',
 };
 
 const mapDispatchToProps = (dispatch) => {

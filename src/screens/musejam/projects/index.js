@@ -336,10 +336,7 @@ class Projects extends Component{
 
 Projects.navigationOptions = {
     //title: 'Projects',
-    header:({ state}) => ({
-      visible:false,
-
-    })
+    header:null
 };
 
 const mapDispatchToProps = (dispatch) => {

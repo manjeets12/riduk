@@ -8,6 +8,7 @@ import imgModal from './imgModal';
 import musejam from './musejam';
 import cubical from './cubical';
 import contacts from './contacts';
+import cameras from './cameras';
 
 
 const rootReducer = combineReducers({
@@ -16,7 +17,8 @@ const rootReducer = combineReducers({
   imgModal,
   musejam,
   cubical,
-  contacts
+  contacts,
+  cameras
 });
 
 export default rootReducer

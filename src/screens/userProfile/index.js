@@ -196,14 +196,9 @@ class UserProfile extends Component{
 
 UserProfile.navigationOptions = {
     title: 'Profile',
-    header:({ state}) => ({
-      right: renderRight(state),
-      style: {backgroundColor:'#E91E63'},
-      tintColor: '#FFF',
-      titleStyle: {
-        color: '#FFF'
-      }
-    })
+    headerStyle: {backgroundColor:'#E91E63'},
+    headerTintColor: '#FFF',
+    headerTitleStyle: { color: '#FFF'}
 };
 
 const mapDispatchToProps = (dispatch) => {
