@@ -47,7 +47,12 @@ class Videos extends Component{
 							   style={[styles.socialButton,{backgroundColor:'#375f9d',marginRight:10}]}>
 						      <Text style={[styles.btnText,{color:'#fff'}]}>Add Camera</Text>
 						    </TouchableOpacity>
-						    <TouchableOpacity onPress={()=>this.props.playVideo()}
+						    <TouchableOpacity 
+                onPress={()=>this.props.playVideo(NavigationActions.navigate({
+                        routeName: 'VideoPlayer',
+                        params: {url:this.state.camera.url},
+                      }))
+                  }
 							   style={[styles.socialButton, {backgroundColor:'#d9372c',marginLeft:10}]}>
 						      <Text style={[styles.btnText,{color:'#fff'}]}>Play Streaming</Text>
 						    </TouchableOpacity>
@@ -65,7 +70,7 @@ const mapDispatchToProps = (dispatch) => {
    return {
    	openDrawer:() => dispatch(NavigationActions.navigate({ routeName: 'Drawer' })),
     addCamera:() => dispatch(NavigationActions.navigate({ routeName: 'AddCamera' })),
-    playVideo:() => dispatch(NavigationActions.navigate({ routeName: 'VideoPlayer' }))
+    playVideo:(data) => dispatch(data)
    }
 };
 
