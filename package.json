@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "16.0.0-alpha.6",
+    "react": "16.5.0",
     "react-native": "0.43.0",
     "react-native-actionsheet": "^2.0.6",
     "react-native-contacts": "^0.8.1",
